@@ -6,27 +6,36 @@
 	const caseStudies = [
 		{
 			title: 'Orange Laundromat: Reinventing Laundry Convenience',
-			desc: 'A smart laundry app that lets users schedule pickups, track orders, and receive freshly cleaned clothes within 24–48 hours all from their phone.',
+			desc: 'A smart laundry app that lets users schedule pickups, track orders, and receive freshly cleaned clothes within 24-48 hours all from their phone.',
 			tags: ['Product Strategy', 'Mobile App', 'UX/UI Design'],
 			duration: '2 months',
 			link: '/case-studies/orange-laundromat',
-			ctaLabel: 'View Case Study →'
+			ctaLabel: 'View Case Study ->',
+			visualLabel: 'Orange Laundromat',
+			visualMeta: 'Pickup, tracking, delivery',
+			visualTone: 'orange'
 		},
 		{
 			title: 'RetailCo: E-Commerce Platform Overhaul',
 			desc: 'Rebuilt a legacy monolith into a modern, scalable e-commerce platform. Reduced page load times by 60% and increased conversion rate significantly.',
 			tags: ['Web Development', 'UX/UI Design', 'CMS'],
 			duration: '4 months',
-			link: '/contact',
-			ctaLabel: 'Discuss Similar Project →'
+			link: '/case-studies/retailco',
+			ctaLabel: 'View Case Study ->',
+			visualLabel: 'RetailCo',
+			visualMeta: '60% faster pages',
+			visualTone: 'blue'
 		},
 		{
 			title: 'SwiftMove: Logistics Tracking App',
 			desc: 'Designed and built a cross-platform mobile app for real-time shipment tracking, driver management, and customer notifications.',
 			tags: ['Mobile App', 'Backend', 'Product Strategy'],
 			duration: '3 months',
-			link: '/contact',
-			ctaLabel: 'Discuss Similar Project →'
+			link: '/case-studies/swiftmove',
+			ctaLabel: 'View Case Study ->',
+			visualLabel: 'SwiftMove',
+			visualMeta: 'Realtime logistics visibility',
+			visualTone: 'slate'
 		}
 	];
 </script>
@@ -68,21 +77,44 @@
 	<div class="max-w-7xl mx-auto px-6">
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 			{#each caseStudies as study, i}
-				<div class="border border-brand-blue bg-white shadow-sm flex flex-col overflow-hidden">
+				<a
+					href={study.link}
+					aria-label={`View case study for ${study.title}`}
+					class="group flex flex-col overflow-hidden rounded-[2rem] border border-brand-blue/15 bg-linear-to-b from-white to-slate-50/70 shadow-[0_18px_55px_-28px_rgba(0,68,147,0.42)] transition-all duration-200 hover:-translate-y-1 hover:border-brand-blue/30 hover:shadow-[0_28px_80px_-34px_rgba(0,68,147,0.52)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-blue/40"
+				>
 					<!-- IMAGE SECTION -->
-					<div class="w-full bg-[#f28e1d] flex items-center justify-center relative overflow-hidden" style="aspect-ratio: 4/3;">
+					<div
+						class={`relative flex w-full items-center justify-center overflow-hidden ${
+							study.visualTone === 'orange'
+								? 'bg-[#f28e1d]'
+								: study.visualTone === 'blue'
+									? 'bg-linear-to-br from-[#0f4c81] via-[#155fa0] to-[#4ea8de]'
+									: 'bg-linear-to-br from-slate-800 via-slate-700 to-slate-500'
+						}`}
+						style="aspect-ratio: 4/3;"
+					>
 						{#if i === 0}
-							<!-- Note: Please save the provided image as "orange-laundromat.png" inside the "static" folder of your project -> "static/orange-laundromat.png" -->
 							<img src="/orange-laudromat.svg" alt="Orange Laundromat Project Showcase" class="w-full h-full object-cover" />
 						{:else}
-							<div class="text-white/60 text-sm font-medium">
-								[ Project Image Placeholder ]
+							<div class="absolute inset-0 opacity-20">
+								<div class="absolute left-6 top-6 h-14 w-14 rounded-full border border-white/30"></div>
+								<div class="absolute right-8 top-10 h-24 w-24 rounded-3xl border border-white/20"></div>
+								<div class="absolute bottom-6 left-10 h-20 w-20 rounded-2xl border border-white/20"></div>
+							</div>
+							<div class="relative z-10 px-6 text-center text-white">
+								<p class="text-sm font-semibold uppercase tracking-[0.3em] text-white/70">
+									Case Study
+								</p>
+								<h2 class="mt-3 text-3xl font-extrabold tracking-tight">
+									{study.visualLabel}
+								</h2>
+								<p class="mt-3 text-sm font-medium text-white/80">{study.visualMeta}</p>
 							</div>
 						{/if}
 					</div>
 
 					<!-- Content -->
-					<div class="p-6 flex flex-col flex-1">
+					<div class="flex flex-1 flex-col p-7">
 						<!-- Title & Logo -->
 						<div class="flex items-start gap-3 mb-4">
 							{#if i === 0}
@@ -118,15 +150,14 @@
 								Duration: <span class="font-medium text-slate-700">{study.duration}</span>
 							</div>
 
-							<!-- CTA Button -->
 							<div class="flex justify-center md:justify-start">
-								<Button href={study.link} variant="outline" class="w-full md:w-auto px-6 py-2 border-brand-blue/20 text-brand-blue hover:bg-brand-blue hover:text-white transition-colors font-semibold cursor-pointer rounded-md">
+								<span class="inline-flex w-full items-center justify-center rounded-full border border-brand-blue/20 px-6 py-2.5 font-semibold text-brand-blue transition-colors group-hover:bg-brand-blue group-hover:text-white md:w-auto">
 									{study.ctaLabel}
-								</Button>
+								</span>
 							</div>
 						</div>
 					</div>
-				</div>
+				</a>
 			{/each}
 		</div>
 	</div>
