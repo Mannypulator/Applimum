@@ -1,24 +1,14 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
 	import { Mail, Phone, Linkedin, Instagram, Twitter, ArrowLeft } from '@lucide/svelte';
+	import SiteHeader from '$lib/components/SiteHeader.svelte';
 </script>
 
 <svelte:head>
 	<title>Orange Laundromat Case Study – Applimum</title>
 </svelte:head>
 
-<!-- Navigation -->
-<nav class="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
-	<a href="/" class="text-2xl font-bold tracking-tight text-brand-dark">APPLIMUM</a>
-	<div class="hidden md:flex gap-8 font-medium text-slate-600">
-		<a href="/" class="hover:text-brand-heading transition-colors">Home</a>
-		<a href="/about" class="hover:text-brand-heading transition-colors">About Us</a>
-		<a href="/service" class="hover:text-brand-heading transition-colors">Service</a>
-		<a href="/case-studies" class="text-brand-heading font-semibold transition-colors">Case Studies</a>
-		<a href="/contact" class="hover:text-brand-heading transition-colors">Contact</a>
-	</div>
-	<Button class="bg-brand-blue hover:bg-blue-800 text-white rounded-md px-6 cursor-pointer">Get Started</Button>
-</nav>
+<SiteHeader />
 
 <main class="max-w-6xl mx-auto px-6 pb-24">
 	<!-- Back Button -->
@@ -193,7 +183,10 @@
 		<p class="text-slate-600 text-lg max-w-3xl mx-auto mb-10 relative z-10 leading-relaxed w-full">
 			Ready to build the future of digital experiences for your customers? Partner with Applimum, the web development agency trusted by forward-thinking brands to craft powerful, scalable, and user-focused products. Let's turn your vision into a product that drives results.
 		</p>
-		<Button class="bg-brand-blue hover:bg-blue-800 text-white rounded-md px-8 py-6 text-lg cursor-pointer relative z-10 font-semibold shadow-lg shadow-brand-blue/20">
+		<Button
+			href="/contact"
+			class="bg-brand-blue hover:bg-blue-800 text-white rounded-md px-8 py-6 text-lg cursor-pointer relative z-10 font-semibold shadow-lg shadow-brand-blue/20"
+		>
 			Start Building Today →
 		</Button>
 	</div>

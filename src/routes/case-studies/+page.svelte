@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
 	import { Mail, Phone, Linkedin, Instagram, Twitter } from '@lucide/svelte';
+	import SiteHeader from '$lib/components/SiteHeader.svelte';
 
 	const caseStudies = [
 		{
@@ -8,21 +9,24 @@
 			desc: 'A smart laundry app that lets users schedule pickups, track orders, and receive freshly cleaned clothes within 24–48 hours all from their phone.',
 			tags: ['Product Strategy', 'Mobile App', 'UX/UI Design'],
 			duration: '2 months',
-			link: '/case-studies/orange-laundromat'
+			link: '/case-studies/orange-laundromat',
+			ctaLabel: 'View Case Study →'
 		},
 		{
 			title: 'RetailCo: E-Commerce Platform Overhaul',
 			desc: 'Rebuilt a legacy monolith into a modern, scalable e-commerce platform. Reduced page load times by 60% and increased conversion rate significantly.',
 			tags: ['Web Development', 'UX/UI Design', 'CMS'],
 			duration: '4 months',
-			link: '#'
+			link: '/contact',
+			ctaLabel: 'Discuss Similar Project →'
 		},
 		{
 			title: 'SwiftMove: Logistics Tracking App',
 			desc: 'Designed and built a cross-platform mobile app for real-time shipment tracking, driver management, and customer notifications.',
 			tags: ['Mobile App', 'Backend', 'Product Strategy'],
 			duration: '3 months',
-			link: '#'
+			link: '/contact',
+			ctaLabel: 'Discuss Similar Project →'
 		}
 	];
 </script>
@@ -32,18 +36,7 @@
 	<meta name="description" content="Explore our portfolio of successful projects." />
 </svelte:head>
 
-<!-- Navigation -->
-<nav class="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
-	<a href="/" class="text-2xl font-bold tracking-tight text-brand-dark">APPLIMUM</a>
-	<div class="hidden md:flex gap-8 font-medium text-slate-600">
-		<a href="/" class="hover:text-brand-heading transition-colors">Home</a>
-		<a href="/about" class="hover:text-brand-heading transition-colors">About Us</a>
-		<a href="/service" class="hover:text-brand-heading transition-colors">Service</a>
-		<a href="/case-studies" class="text-brand-heading font-semibold transition-colors">Case Studies</a>
-		<a href="/contact" class="hover:text-brand-heading transition-colors">Contact</a>
-	</div>
-	<Button class="bg-brand-blue hover:bg-blue-800 text-white rounded-md px-6 cursor-pointer">Get Started</Button>
-</nav>
+<SiteHeader />
 
 <!-- ===== HERO ===== -->
 <section class="relative overflow-hidden bg-gradient-to-br from-white via-brand-light to-white pt-16 pb-20">
@@ -128,7 +121,7 @@
 							<!-- CTA Button -->
 							<div class="flex justify-center md:justify-start">
 								<Button href={study.link} variant="outline" class="w-full md:w-auto px-6 py-2 border-brand-blue/20 text-brand-blue hover:bg-brand-blue hover:text-white transition-colors font-semibold cursor-pointer rounded-md">
-									View Case Study &rarr;
+									{study.ctaLabel}
 								</Button>
 							</div>
 						</div>
@@ -163,10 +156,17 @@
 					Let's turn your vision into a product that delivers real, measurable results for your business.
 				</p>
 				<div class="flex flex-col sm:flex-row justify-center gap-4">
-					<Button class="bg-brand-blue hover:bg-blue-800 text-white px-10 py-5 text-base cursor-pointer">
+					<Button
+						href="/contact"
+						class="bg-brand-blue hover:bg-blue-800 text-white px-10 py-5 text-base cursor-pointer"
+					>
 						Start Your Project →
 					</Button>
-					<Button variant="outline" class="border-brand-blue text-brand-blue hover:bg-blue-50 px-10 py-5 text-base cursor-pointer">
+					<Button
+						href="/contact"
+						variant="outline"
+						class="border-brand-blue text-brand-blue hover:bg-blue-50 px-10 py-5 text-base cursor-pointer"
+					>
 						Contact Us
 					</Button>
 				</div>

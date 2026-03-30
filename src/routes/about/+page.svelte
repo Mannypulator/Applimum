@@ -2,6 +2,7 @@
 	import { Button } from '$lib/components/ui/button';
 	import { Badge } from '$lib/components/ui/badge';
 	import { Mail, Phone, Linkedin, Instagram, Twitter } from '@lucide/svelte';
+	import SiteHeader from '$lib/components/SiteHeader.svelte';
 
 	// About Us Icons
 	import PartnershipIcon from '$lib/components/icons/PartnershipIcon.svelte';
@@ -50,18 +51,7 @@
 	<meta name="description" content="Learn about Applimum's story, mission, and the guiding principles that drive everything we build." />
 </svelte:head>
 
-<!-- Navigation -->
-<nav class="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
-	<a href="/" class="text-2xl font-bold tracking-tight text-brand-dark">APPLIMUM</a>
-	<div class="hidden md:flex gap-8 font-medium text-slate-600">
-		<a href="/" class="hover:text-brand-heading transition-colors">Home</a>
-		<a href="/about" class="text-brand-heading font-semibold transition-colors">About Us</a>
-		<a href="/service" class="hover:text-brand-heading transition-colors">Service</a>
-		<a href="/case-studies" class="hover:text-brand-heading transition-colors">Case Studies</a>
-		<a href="/contact" class="hover:text-brand-heading transition-colors">Contact</a>
-	</div>
-	<Button class="bg-brand-blue hover:bg-blue-800 text-white rounded-md px-6 cursor-pointer">Get Started</Button>
-</nav>
+<SiteHeader />
 
 <!-- ===== ABOUT US HERO ===== -->
 <section class="relative overflow-hidden bg-gradient-to-br from-white via-brand-light to-white py-28">
@@ -151,10 +141,17 @@
 				Our vision is to be the trusted partner businesses turn to for transforming their operations with technology. We want to be known not just for the software we build but for the lasting impact we have on our clients' success.
 			</p>
 			<div class="flex flex-col sm:flex-row justify-center gap-4">
-				<Button class="bg-brand-blue hover:bg-blue-800 text-white px-8 py-5 text-base cursor-pointer">
+				<Button
+					href="/contact"
+					class="bg-brand-blue hover:bg-blue-800 text-white px-8 py-5 text-base cursor-pointer"
+				>
 					Let's Talk →
 				</Button>
-				<Button variant="outline" class="border-brand-blue text-brand-blue hover:bg-blue-50 px-8 py-5 text-base cursor-pointer">
+				<Button
+					href="/case-studies"
+					variant="outline"
+					class="border-brand-blue text-brand-blue hover:bg-blue-50 px-8 py-5 text-base cursor-pointer"
+				>
 					View Case Studies
 				</Button>
 			</div>
@@ -182,8 +179,8 @@
 			<ul class="space-y-4">
 				<li><a href="/" class="hover:text-white hover:underline decoration-brand-blue/50 underline-offset-4 transition-all">Home</a></li>
 				<li><a href="/about" class="hover:text-white hover:underline decoration-brand-blue/50 underline-offset-4 transition-all">About Us</a></li>
-				<li><a href="/#service" class="hover:text-white hover:underline decoration-brand-blue/50 underline-offset-4 transition-all">Services</a></li>
-				<li><a href="/#case-studies" class="hover:text-white hover:underline decoration-brand-blue/50 underline-offset-4 transition-all">Case Studies</a></li>
+				<li><a href="/service" class="hover:text-white hover:underline decoration-brand-blue/50 underline-offset-4 transition-all">Services</a></li>
+				<li><a href="/case-studies" class="hover:text-white hover:underline decoration-brand-blue/50 underline-offset-4 transition-all">Case Studies</a></li>
 			</ul>
 		</div>
 
@@ -204,9 +201,9 @@
 		<div>
 			<h4 class="font-bold text-brand-heading mb-6 uppercase tracking-wider text-xs">Services</h4>
 			<ul class="space-y-3 mb-8">
-				<li><a href="/#ui-ux" class="hover:text-brand-blue transition-colors">UI/UX Design</a></li>
-				<li><a href="/#mobile" class="hover:text-brand-blue transition-colors">Mobile App Development</a></li>
-				<li><a href="/#web" class="hover:text-brand-blue transition-colors">Web Development</a></li>
+				<li><a href="/service" class="hover:text-brand-blue transition-colors">UI/UX Design</a></li>
+				<li><a href="/service" class="hover:text-brand-blue transition-colors">Mobile App Development</a></li>
+				<li><a href="/service" class="hover:text-brand-blue transition-colors">Web Development</a></li>
 			</ul>
 
 			<h4 class="font-bold text-brand-heading mb-4 uppercase tracking-wider text-xs">Connect</h4>

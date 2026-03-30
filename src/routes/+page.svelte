@@ -2,6 +2,7 @@
 	import { Button } from "$lib/components/ui/button";
 	import * as Card from "$lib/components/ui/card";
 	import { Badge } from "$lib/components/ui/badge";
+	import SiteHeader from '$lib/components/SiteHeader.svelte';
 	
 	// Icons
 	import UiUxIcon from "$lib/components/icons/UiUxIcon.svelte";
@@ -44,17 +45,7 @@
 	];
 </script>
 
-<nav class="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
-	<div class="text-2xl font-bold tracking-tight text-brand-dark">APPLIMUM</div>
-	<div class="hidden md:flex gap-8 font-medium text-slate-600">
-		<a href="#home" class="hover:text-brand-heading transition-colors">Home</a>
-		<a href="/about" class="hover:text-brand-heading transition-colors">About Us</a>
-		<a href="/service" class="hover:text-brand-heading transition-colors">Service</a>
-		<a href="/case-studies" class="hover:text-brand-heading transition-colors">Case Studies</a>
-		<a href="/contact" class="hover:text-brand-heading transition-colors">Contact</a>
-	</div>
-	<Button class="bg-brand-blue hover:bg-blue-800 text-white rounded-md px-6 cursor-pointer">Get Started</Button>
-</nav>
+<SiteHeader />
 
 <section class="relative pt-20 pb-32 overflow-hidden bg-gradient-to-br from-white via-brand-light to-white">
 	<div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
@@ -72,8 +63,21 @@
 		</p>
 
 		<div class="flex flex-col sm:flex-row justify-center gap-4">
-			<Button size="lg" class="bg-brand-blue hover:bg-blue-800 text-white px-8 py-6 text-lg cursor-pointer">Start Building</Button>
-			<Button variant="outline" size="lg" class="border-brand-blue text-brand-blue hover:bg-blue-50 px-8 py-6 text-lg cursor-pointer">View Case Studies</Button>
+			<Button
+				href="/contact"
+				size="lg"
+				class="bg-brand-blue hover:bg-blue-800 text-white px-8 py-6 text-lg cursor-pointer"
+			>
+				Start Building
+			</Button>
+			<Button
+				href="/case-studies"
+				variant="outline"
+				size="lg"
+				class="border-brand-blue text-brand-blue hover:bg-blue-50 px-8 py-6 text-lg cursor-pointer"
+			>
+				View Case Studies
+			</Button>
 		</div>
 	</div>
 </section>
@@ -155,10 +159,10 @@
 		<div>
 			<h4 class="font-bold text-brand-heading mb-6 uppercase tracking-wider text-xs">Quick Links</h4>
 			<ul class="space-y-4">
-				<li><a href="#home" class="hover:text-white hover:underline decoration-brand-blue/50 underline-offset-4 transition-all">Home</a></li>
-				<li><a href="#about" class="hover:text-white hover:underline decoration-brand-blue/50 underline-offset-4 transition-all">About Us</a></li>
-				<li><a href="#service" class="hover:text-white hover:underline decoration-brand-blue/50 underline-offset-4 transition-all">Services</a></li>
-				<li><a href="#case-studies" class="hover:text-white hover:underline decoration-brand-blue/50 underline-offset-4 transition-all">Case Studies</a></li>
+				<li><a href="/" class="hover:text-white hover:underline decoration-brand-blue/50 underline-offset-4 transition-all">Home</a></li>
+				<li><a href="/about" class="hover:text-white hover:underline decoration-brand-blue/50 underline-offset-4 transition-all">About Us</a></li>
+				<li><a href="/service" class="hover:text-white hover:underline decoration-brand-blue/50 underline-offset-4 transition-all">Services</a></li>
+				<li><a href="/case-studies" class="hover:text-white hover:underline decoration-brand-blue/50 underline-offset-4 transition-all">Case Studies</a></li>
 			</ul>
 		</div>
 
@@ -179,9 +183,9 @@
 		<div>
 			<h4 class="font-bold text-brand-heading mb-6 uppercase tracking-wider text-xs">Services</h4>
 			<ul class="space-y-3 mb-8">
-				<li><a href="#ui-ux" class="hover:text-brand-blue transition-colors">UI/UX Design</a></li>
-				<li><a href="#mobile" class="hover:text-brand-blue transition-colors">Mobile App Development</a></li>
-				<li><a href="#web" class="hover:text-brand-blue transition-colors">Web Development</a></li>
+				<li><a href="/service" class="hover:text-brand-blue transition-colors">UI/UX Design</a></li>
+				<li><a href="/service" class="hover:text-brand-blue transition-colors">Mobile App Development</a></li>
+				<li><a href="/service" class="hover:text-brand-blue transition-colors">Web Development</a></li>
 			</ul>
 
 			<h4 class="font-bold text-brand-heading mb-4 uppercase tracking-wider text-xs">Connect</h4>

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Button } from '$lib/components/ui/button';
 	import { Mail, Phone, Linkedin, Instagram, Twitter } from '@lucide/svelte';
+	import SiteHeader from '$lib/components/SiteHeader.svelte';
 
 	// Service Icons
 	import ProjectMgmtIcon from '$lib/components/icons/ProjectMgmtIcon.svelte';
@@ -35,20 +36,7 @@
 	/>
 </svelte:head>
 
-<!-- Navigation -->
-<nav class="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
-	<a href="/" class="text-2xl font-bold tracking-tight text-brand-dark">APPLIMUM</a>
-	<div class="hidden md:flex gap-8 font-medium text-slate-600">
-		<a href="/" class="hover:text-brand-heading transition-colors">Home</a>
-		<a href="/about" class="hover:text-brand-heading transition-colors">About Us</a>
-		<a href="/service" class="text-brand-heading font-semibold transition-colors">Service</a>
-		<a href="/case-studies" class="hover:text-brand-heading transition-colors">Case Studies</a>
-		<a href="/contact" class="hover:text-brand-heading transition-colors">Contact</a>
-	</div>
-	<Button class="bg-brand-blue hover:bg-blue-800 text-white rounded-md px-6 cursor-pointer">
-		Get Started
-	</Button>
-</nav>
+<SiteHeader />
 
 <!-- ===== HERO ===== -->
 <section class="relative overflow-hidden bg-gradient-to-br from-white via-brand-light to-white pt-16 pb-12">
@@ -159,6 +147,7 @@
 					product that drives real results.
 				</p>
 				<Button
+					href="/contact"
 					class="bg-brand-blue hover:bg-blue-800 text-white px-10 py-5 text-base cursor-pointer"
 				>
 					Start Building Today →
@@ -186,7 +175,7 @@
 			<ul class="space-y-3">
 				<li><a href="/about" class="hover:text-white transition-colors">About Us</a></li>
 				<li><a href="/service" class="hover:text-white transition-colors">Service</a></li>
-				<li><a href="/#case-studies" class="hover:text-white transition-colors">Case Studies</a></li>
+				<li><a href="/case-studies" class="hover:text-white transition-colors">Case Studies</a></li>
 			</ul>
 		</div>
 
